@@ -1,0 +1,21 @@
+citHeader("To cite the AdaReFun R package, use:")
+
+bibentry(
+  bibtype = "Manual",
+  title = paste(
+    "AdaReFun: Adaptive Regional Functional Regression"
+  ),
+  author = c(
+    person(
+      "Bahadır", "Yüzbaşı",
+      comment = c(ORCID = "0000-0002-6196-3201")
+    ),
+    person(
+      "Jiguo", "Cao",
+      comment = c(ORCID = "0000-0001-7417-6330")
+    )
+  ),
+  year = "2026",
+  note = "R package version 0.1.2",
+  url = "https://github.com/byuzbasi/AdaReFun"
+)

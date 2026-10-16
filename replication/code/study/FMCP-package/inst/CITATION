@@ -1,0 +1,9 @@
+citHeader("To cite the FMCP R package, use:")
+
+bibentry(
+  bibtype = "Manual",
+  title = "FMCP: Functional Linear Regression with fMCP and fSCAD",
+  author = person("Bahadir", "Yuzbasi"),
+  year = "2026",
+  note = "R package version 0.2.0"
+)

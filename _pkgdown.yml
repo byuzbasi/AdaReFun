@@ -1,0 +1,43 @@
+template:
+  bootstrap: 5
+  bslib:
+    primary: '#007C83'
+    secondary: '#E49A42'
+    bg: '#FCFCF9'
+    fg: '#152C3B'
+    base_font: 'sans-serif'
+    heading_font: 'sans-serif'
+    code_font: 'monospace'
+navbar:
+  structure:
+    left: [intro, reference, articles, news]
+    right: [search, github]
+  components:
+    intro:
+      text: Get started
+      href: articles/getting-started.html
+    github:
+      icon: fab fa-github
+      href: https://github.com/byuzbasi/AdaReFun
+      aria-label: GitHub repository
+news:
+  cran_dates: false
+home:
+  title: Adaptive Regional Functional Regression
+  description: Local sparsity, explicit validation and an RcppArmadillo core.
+  sidebar:
+    html: pkgdown/sidebar.html
+articles:
+  - title: Learn and reproduce
+    navbar: ~
+    contents: [getting-started, methods-and-scope, results-gallery, reproduction, arfc]
+reference:
+  - title: Adaptive regional models
+    desc: One specification or an independent-validation choice among four.
+    contents: [arfc, arfc_select, arfc_control]
+  - title: Fixed-resolution comparators
+    contents: [fmcp, fscad, fmcp_control]
+  - title: Inspect, predict and visualize
+    contents: [starts_with('coef'), starts_with('predict'), starts_with('plot'), starts_with('print'), starts_with('summary'), starts_with('nobs')]
+  - title: Package
+    contents: [AdaReFun-package]

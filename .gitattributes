@@ -1,0 +1,4 @@
+# Preserve the exact bytes protected by the frozen replication manifests.
+* text=auto
+/replication/** -text
+*.tar.gz -text

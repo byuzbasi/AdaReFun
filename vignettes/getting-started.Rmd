@@ -1,0 +1,68 @@
+---
+title: "Get started: from curves to regions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Get started: from curves to regions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse=TRUE, comment="#>", fig.width=7, fig.height=4)
+library(AdaReFun)
+```
+
+AdaReFun fits **scalar-on-function** regression: each row is a sampled curve,
+and each curve has one scalar response. It is not a function-on-scalar or
+function-on-function fitting interface.
+
+## A small, reproducible demonstration
+
+This artificial dataset illustrates the interface, not the paper's performance
+claims. The training/validation split is explicit. No test set is used for
+selection. The modest tuning grids keep this example short.
+
+```{r data}
+set.seed(2026)
+t <- seq(0, 1, length.out=51)
+n <- 60
+scores <- matrix(rnorm(n*6), n, 6)
+x <- scores %*% t(sapply(1:6, function(j) sin(j*pi*t)))
+beta <- ifelse(t >= .35 & t <= .65, 0, 1.5*sin(2*pi*t))
+w <- c(.01, rep(.02,49), .01)
+y <- .5 + drop(x %*% (w*beta)) + rnorm(n, sd=.15)
+```
+
+`x` is an observations-by-grid matrix. `t` contains argument locations on
+`[0,1]`; `beta` is the demonstration truth. The vector `w` is a trapezoidal
+integration rule used only to generate the synthetic response.
+
+```{r fit}
+selection <- arfc_select(y[1:40], x[1:40,], t,
+  validation=list(y=y[41:60], x=x[41:60,]),
+  lambda=c(1e-4, 1e-3, 1e-2), kappa=c(1e-5, 1e-4),
+  levels=c(4L,8L,16L))
+selection$selection
+```
+
+## Inspect the choice and its coefficient
+
+```{r validation}
+plot(selection, type="validation")
+```
+
+```{r coefficient}
+plot(selection, type="coefficient")
+```
+
+`arfc_select()` returns one training-fitted model. It neither averages the four
+candidates nor silently refits on the validation observations. For a stated
+resolution and penalty, use `arfc()` directly. Predictions use the training
+centering quantities:
+
+```{r prediction}
+head(predict(selection, x[41:60,]))
+```
+
+Read the method guide before interpreting exact zeros as structural evidence.
+Finite-precision cutoff/refit conventions and convergence diagnostics matter.

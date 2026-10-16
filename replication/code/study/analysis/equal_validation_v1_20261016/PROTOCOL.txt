@@ -1,0 +1,59 @@
+Equal-validation selector comparison
+
+This retrospective analysis uses the completed simulation fits.
+
+Unit: the original task/replication. Analyze all four cases separately,
+100 tasks per case; no overall pooling or exclusions. All comparisons are
+paired by task and all three original seeds. Each task has 150 training,
+150 independent validation and 2000 independent test observations.
+
+Base fits: fixed_fmcp, fixed_fscad, asr_mcp, asr_scad, amr_mcp, amr_scad.
+Use their already training-BIC-selected coefficients without any refitting.
+Original fitting/convergence/refit and provenance gates must pass first.
+
+Selector libraries and tie priority:
+  Fixed-Select: fixed_fmcp, fixed_fscad
+  ASR-Select: asr_mcp, asr_scad
+  AMR-Select: amr_mcp, amr_scad
+  ARFC-Select: asr_mcp, asr_scad, amr_mcp, amr_scad
+Each selects minimum stored validation_response_mse, with original tolerance
+1e-12*(1+abs(minimum)) and first eligible method in the above ordering.
+The selector function receives only task ID, method and validation loss.
+No test loss, coefficient truth, support metric or oracle enters selection.
+Reconstructed ARFC-Select must exactly match all 400 original choices.
+Fixed-, ASR- and AMR-Select are diagnostic comparison procedures, not new
+package estimators. Equal validation budget does not mean equal library size
+or equal computation, and does not test full-data retraining on all 300 rows.
+
+Report the six base fits and four selectors. Primary review question:
+ARFC-Select minus Fixed-Select under the same validation information.
+Frozen component contrasts (left minus right):
+  asr_mcp - fixed_fmcp
+  asr_scad - fixed_fscad
+  amr_mcp - asr_mcp
+  amr_scad - asr_scad
+  asr_select - fixed_select
+  amr_select - asr_select
+  arfc_select - asr_select
+  arfc_select - amr_select
+  arfc_select - fixed_select
+Fixed- versus ASR comparisons change adaptive weighting AND criterion
+normalization; they do not isolate adaptive weights or normalization alone.
+Within-family AMR-versus-ASR changes the regional library and its levelwise
+weights. Do not interpret an arbitrary telescoping sequence as causal effects.
+
+Metrics: independent-test response MSE (primary prediction), signal MSE,
+total ISE and v18-corrected null/non-null ISE. Case II additionally uses
+true-zero rate, false-zero rate, null IoU and boundary error. Case I uses
+false-active proportion; Cases III/IV use false-zero rate. Preserve original
+metric definitions; unavailable structural metrics stay NA, not zero.
+
+Uncertainty: reuse the project's paired Student-t mean/MCSE/95% interval
+calculation over the 100 task differences, separately by case and metric.
+Intervals are pointwise exploratory Monte Carlo intervals, not simultaneous
+familywise evidence. No new significance decision rule or p-value threshold.
+Selection frequencies, tie counts and choice disagreements are descriptive.
+Report effects in original MSE units and percentage points for rates.
+Percent prediction improvement is 100*(mean(right)-mean(left))/mean(right),
+not the mean of task-wise percentage improvements.
+

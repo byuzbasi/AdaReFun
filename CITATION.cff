@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the version of AdaReFun used in your analysis."
+type: software
+title: "AdaReFun: Adaptive Regional Functional Regression"
+version: 0.1.2
+date-released: '2026-10-16'
+license: GPL-3.0-or-later
+repository-code: 'https://github.com/byuzbasi/AdaReFun'
+authors:
+  - family-names: Yüzbaşı
+    given-names: Bahadır
+    orcid: 'https://orcid.org/0000-0002-6196-3201'
+  - family-names: Cao
+    given-names: Jiguo
+    orcid: 'https://orcid.org/0000-0001-7417-6330'
+abstract: >-
+  Adaptive single- and multi-resolution functional regression using regional
+  MCP/SCAD penalties, explicit validation selection, and an RcppArmadillo core.

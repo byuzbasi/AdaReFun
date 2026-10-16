@@ -1,0 +1,9 @@
+:root { --bs-border-radius: .65rem; }
+.navbar { border-bottom: 1px solid #dbe5e5; background: #fcfcf9; }
+h1, h2, h3 { letter-spacing: -.025em; }
+h1 { font-weight: 750; }
+main img { max-width: 100%; height: auto; }
+pre { border: 1px solid #dce7e6; border-radius: .65rem; }
+.page-header { border-bottom: 1px solid #dce7e6; }
+footer { border-top: 1px solid #dce7e6; }
+@media(max-width:600px) { h1 img { width:90px !important; } table { font-size:.85rem; } }

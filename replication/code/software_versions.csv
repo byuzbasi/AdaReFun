@@ -1,0 +1,11 @@
+package,study_version
+R,4.6.0
+FMCP,0.2.0
+Rcpp,1.1.1-1.1
+RcppArmadillo,15.2.7-1
+PFLR,1.1.0
+fda,6.3.0
+glmnet,5.0
+flare,1.8
+psych,2.6.3
+AdaReFun,0.1.2

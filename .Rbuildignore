@@ -1,0 +1,13 @@
+^AdaReFun\.Rproj$
+^\.Rproj\.user$
+^src/.*\.o$
+^src/.*\.so$
+^_pkgdown\.yml$
+^pkgdown$
+^docs$
+^CITATION\.cff$
+^CONTRIBUTING\.md$
+^\.github$
+^replication$
+^downloads$
+^REPRODUCIBILITY\.md$

@@ -1,0 +1,36 @@
+Package: FMCP
+Type: Package
+Title: Functional Linear Regression with MCP and SCAD Penalties
+Version: 0.2.0
+Authors@R: person(
+    given = "Bahadir",
+    family = "Yuzbasi",
+    email = "bahadir.yuzbasi@inonu.edu.tr",
+    role = c("aut", "cre")
+  )
+Description: Fits smooth and locally sparse scalar-on-function linear
+    regression models with functional minimax concave penalty (fMCP) and
+    functional smoothly clipped absolute deviation (fSCAD) penalties. Dense
+    functional predictors are represented with B-splines, while a roughness
+    penalty controls smoothness and interval-wise functional penalties identify
+    null subregions. Computationally intensive matrix construction, local
+    quadratic approximation, tuning-grid fitting, and model scoring are
+    implemented with 'RcppArmadillo'.
+License: GPL (>= 3)
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports:
+    graphics,
+    Rcpp,
+    splines,
+    stats,
+    utils
+LinkingTo:
+    Rcpp,
+    RcppArmadillo
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+SystemRequirements: C++17
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3

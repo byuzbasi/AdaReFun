@@ -1,0 +1,7 @@
+file,bytes,md5,generated_by
+real_data/data/processed/v1/truck_processed_v1.rds,5644,2f5770dd3b1ad3d4258ca9d8f4da1b7d,real_data/01_prepare_real_data.R
+real_data/data/processed/v3/neospectra_soc_processed_v3.rds,3492988,77598eecbaec4c034782e9daedc5e49e,real_data/10_prepare_neospectra_v3.R
+real_data/results/v1/repeated_cv_folds_v1.csv,169385,12d87747a24272676236491a5b4ef5b0,real_data/03_run_repeated_cv.R
+real_data/results/v1/repeated_cv_predictions_v1.csv,8354796,96b5c74b6dbe8da66dc9bc8f6a5cfe24,real_data/03_run_repeated_cv.R
+real_data/results/v3/neospectra/nested_cv_folds_v3.csv,189545,7f30b44d9c67d7a07839988c198d51e5,real_data/11_run_neospectra_nested_cv_v3.R
+real_data/results/v3/neospectra/nested_cv_predictions_v3.csv,1871407,4f8394e8ed6a626e90f16fa94b5825ba,real_data/11_run_neospectra_nested_cv_v3.R
