@@ -30,7 +30,8 @@ Description: Fits smooth and locally sparse scalar-on-function linear
     approximation, tuning-path fitting, and model scoring are implemented with
     'RcppArmadillo'.
 License: GPL (>= 3)
-URL: https://github.com/byuzbasi/AdaReFun
+URL: https://byuzbasi.github.io/AdaReFun/,
+    https://github.com/byuzbasi/AdaReFun
 BugReports: https://github.com/byuzbasi/AdaReFun/issues
 Encoding: UTF-8
 Depends: R (>= 4.1.0)

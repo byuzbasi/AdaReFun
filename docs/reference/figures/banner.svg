@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="340" viewBox="0 0 1100 340" role="img" aria-label="Conceptual regional-penalty illustration; not an estimated result">
+<rect width="1100" height="340" rx="20" fill="#152c3b"/>
+<text x="50" y="75" font-family="Arial,sans-serif" font-size="14" letter-spacing="3" fill="#8cd7d1">ADAPTIVE REGIONAL FUNCTIONAL REGRESSION</text>
+<text x="50" y="135" font-family="Arial,sans-serif" font-size="43" fill="#fff" font-weight="700">One curve.</text>
+<text x="50" y="188" font-family="Arial,sans-serif" font-size="43" fill="#fff" font-weight="700">Multiple regional views.</text>
+<text x="50" y="247" font-family="Arial,sans-serif" font-size="18" fill="#c8dbde">MCP / SCAD · single / multiresolution · explicit validation</text>
+<g stroke="#416674" stroke-width="1"><path d="M710 65v210m80-210v210m80-210v210m80-210v210m80-210v210M700 240h345"/></g>
+<rect x="822" y="60" width="100" height="215" fill="#5fa29f" opacity=".18"/>
+<path d="M700 190c40-170 80-170 115-15 9 40 14 65 30 65h60c28 0 36-95 65-95 23 0 47 56 75 85" fill="none" stroke="#e8a44e" stroke-width="5"/>
+<text x="870" y="308" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#9ab8c0">CONCEPTUAL ILLUSTRATION · NOT FITTED DATA</text></svg>

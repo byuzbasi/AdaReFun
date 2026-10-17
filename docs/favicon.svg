@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="240" viewBox="0 0 220 240" role="img" aria-label="AdaReFun logo: normalized regional grids and a stylized curve">
+<path d="M110 8 208 64v112l-98 56-98-56V64Z" fill="#152c3b"/>
+<path d="M110 18 198 69v102l-88 51-88-51V69Z" fill="none" stroke="#588484"/>
+<g stroke="#73c9c4" fill="none"><path d="M47 71h126M47 89h126M47 107h126"/><path d="M47 66v10m63-10v10m63-10v10M47 84v10m31-10v10m32-10v10m31-10v10m32-10v10M47 102v10m16-10v10m15-10v10m16-10v10m16-10v10m15-10v10m16-10v10m16-10v10m16-10v10"/></g>
+<path d="M45 149c14-51 24-51 40-18 7 15 13 19 25 19h20c18 0 25 6 45 29" fill="none" stroke="#e8a44e" stroke-width="5" stroke-linecap="round"/>
+<text x="110" y="199" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" fill="#fff" font-weight="700">AdaReFun</text></svg>

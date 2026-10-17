@@ -1,5 +1,7 @@
 # AdaReFun <img src="man/figures/logo.svg" align="right" width="140" alt="AdaReFun regional grid logo" />
 
+[Documentation](https://byuzbasi.github.io/AdaReFun/) · [Get started](https://byuzbasi.github.io/AdaReFun/articles/getting-started.html) · [Reference](https://byuzbasi.github.io/AdaReFun/reference/index.html)
+
 ### Smooth effects. Meaningful regions.
 
 ![Conceptual illustration of adaptive regional functional regression](man/figures/banner.svg)
@@ -46,10 +48,10 @@ Developed by Bahadır Yüzbaşı and Jiguo Cao. Use `citation("AdaReFun")`
 to cite the package.
 
 Repository: [byuzbasi/AdaReFun](https://github.com/byuzbasi/AdaReFun).
-See the [getting-started guide](vignettes/getting-started.Rmd),
-[method guide](vignettes/methods-and-scope.Rmd),
-[result gallery](vignettes/results-gallery.Rmd), and
-[reproduction guide](vignettes/reproduction.Rmd).
+See the [getting-started guide](https://byuzbasi.github.io/AdaReFun/articles/getting-started.html),
+[method guide](https://byuzbasi.github.io/AdaReFun/articles/methods-and-scope.html),
+[result gallery](https://byuzbasi.github.io/AdaReFun/articles/results-gallery.html), and
+[reproduction guide](https://byuzbasi.github.io/AdaReFun/articles/reproduction.html).
 
 ## Installation
 
@@ -63,7 +65,7 @@ remotes::install_github("byuzbasi/AdaReFun", build_vignettes = FALSE)
 
 ## Analysis scripts
 
-The [replication code](replication/code) contains the simulation and real-data
+The [replication code](https://github.com/byuzbasi/AdaReFun/tree/main/replication/code) contains the simulation and real-data
 run scripts. See the [run guide](REPRODUCIBILITY.md) for setup and commands.
 
 ### Simulation results
@@ -71,7 +73,7 @@ run scripts. See the [run guide](REPRODUCIBILITY.md) for setup and commands.
 ![Case II coefficient recovery with a true-null interval inset](man/figures/case-ii-recovery.png)
 
 The inset shows coefficient recovery inside the true-null interval in Case II.
-The [result gallery](vignettes/results-gallery.Rmd) also shows exact-zero
+The [result gallery](https://byuzbasi.github.io/AdaReFun/articles/results-gallery.html) also shows exact-zero
 selection frequencies and the real-data analyses.
 
 ## Direct ARFC fit

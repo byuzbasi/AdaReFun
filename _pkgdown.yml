@@ -1,3 +1,5 @@
+url: https://byuzbasi.github.io/AdaReFun/
+
 template:
   bootstrap: 5
   bslib:
@@ -11,11 +13,14 @@ template:
 navbar:
   structure:
     left: [intro, reference, articles, news]
-    right: [search, github]
+    right: [search, author, github]
   components:
     intro:
       text: Get started
       href: articles/getting-started.html
+    author:
+      text: Research hub
+      href: https://byuzbasi.github.io/en/software/
     github:
       icon: fab fa-github
       href: https://github.com/byuzbasi/AdaReFun

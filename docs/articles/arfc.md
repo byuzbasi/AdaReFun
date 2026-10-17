@@ -1,0 +1,93 @@
+# Adaptive Regional Functional Regression with AdaReFun
+
+## Model family
+
+`AdaReFun` is short for **Adaptive Regional Functional Regression**. It
+fits scalar-on-function regression with a common B-spline coefficient
+vector and folded-concave regional penalties. ARFC denotes the adaptive
+regional folded-concave estimator family. The public interface contains
+four adaptive regional candidates:
+
+| Resolution | MCP     | SCAD     |
+|:-----------|:--------|:---------|
+| Single     | ASR-MCP | ASR-SCAD |
+| Multi      | AMR-MCP | AMR-SCAD |
+
+The established fixed-resolution
+[`fMCP()`](https://byuzbasi.github.io/AdaReFun/reference/fmcp.md) and
+[`fSCAD()`](https://byuzbasi.github.io/AdaReFun/reference/fscad.md)
+estimators are also retained as comparators; they are not automatic
+candidates in ARFC-Select.
+
+## Direct fitting of one ARFC specification
+
+The user supplies both tuning grids. The smooth-pilot BIC selects one
+roughness value, after which the regional path is evaluated on the
+common `lambda` grid.
+
+``` r
+
+library(AdaReFun)
+
+fit <- arfc(
+  y, x, argvals,
+  lambda = 10^seq(-5, -1, length.out = 10),
+  kappa = 10^seq(-7, -2, length.out = 6),
+  resolution = "multi",
+  penalty = "MCP",
+  levels = c(8L, 16L, 32L)
+)
+
+summary(fit)
+plot(fit, type = "coefficient")
+plot(fit, type = "regions")
+plot(fit, type = "weights")
+plot(fit, type = "tuning")
+```
+
+## Selecting among four candidates
+
+[`arfc_select()`](https://byuzbasi.github.io/AdaReFun/reference/arfc_select.md)
+fits all four candidates on the training sample and returns the one with
+the lowest MSE on the supplied validation sample.
+
+``` r
+
+selected <- arfc_select(
+  y_train, x_train, argvals,
+  validation = list(y = y_validation, x = x_validation),
+  lambda = 10^seq(-5, -1, length.out = 10),
+  kappa = 10^seq(-7, -2, length.out = 6),
+  levels = c(8L, 16L, 32L)
+)
+
+selected$selection
+plot(selected, type = "validation")
+plot(selected, type = "candidates")
+```
+
+## Numerical details
+
+Exact zeros arise from coefficient thresholding followed by an
+active-set roughness refit. The full tuning table retains failed,
+nonconverged, and objective-increase diagnostics. MCP and SCAD are
+nonconvex, so the fitted solutions are local solutions associated with
+the documented smooth-pilot initialization.
+
+With the default shapes, MCP `gamma = 2.7` and SCAD `a = 3.7` have equal
+*scalar* maximum concavity. This calibration does not by itself imply
+that two complete overlapping multi-resolution objectives have identical
+global curvature.
+
+## Citation
+
+AdaReFun is developed by Bahadır Yüzbaşı and Jiguo Cao. The package
+citation is returned by:
+
+``` r
+
+citation("AdaReFun")
+```
+
+Package source and replication materials are available at
+[byuzbasi/AdaReFun](https://github.com/byuzbasi/AdaReFun).

@@ -1,0 +1,44 @@
+# Reproduction and data dictionary
+
+## Reproducing the analyses
+
+The [AdaReFun repository](https://github.com/byuzbasi/AdaReFun) contains
+the package and simulation and data-analysis scripts. Follow the
+replication README for setup, saved-result checks, report generation,
+and numerical reruns. It records the package versions used in the study,
+including FMCP 0.2.0 and the regional fitting code.
+
+## Input dictionary
+
+| Input | Meaning |
+|:---|:---|
+| y | Numeric scalar response, one per curve |
+| x | Numeric matrix: rows are observations, columns are common argument locations |
+| argvals | Strictly increasing locations in physical or declared normalized units |
+| validation$`y / validation`$x | Independent response/vector and curve/matrix with the same grid |
+| lambda / kappa | Explicit penalty and roughness tuning grids |
+
+Training centering is performed by the package; scaling beyond this is
+an analysis choice. Missing or infinite values are rejected, not
+imputed.
+
+## Article datasets
+
+Truck: 108 distributed rows, 90 acceleration measurements on seconds
+1–90, particulate-emission response, distributed with PFLR 1.1.0. No
+vehicle grouping identifier is available. NeoSpectra: 1,974 soil-sample
+IDs and 601 reflectance measurements on 1350–2550 nm, response
+`log(1 + SOC percent)`. Repeat spectra were averaged within sample
+before analysis. Their data sources and licenses remain separate from
+the AdaReFun software license.
+
+Seeds and preprocessing are specified in the run scripts. Folds and
+comparison predictions can be generated locally, or imported from an
+existing study after checking the recorded file hashes. The run guide
+describes both routes; no data or prediction files are bundled in the
+repository.
+
+## Validation scope
+
+Unit tests cover MCP/SCAD and adaptive regional fits, validation
+selection, predictions, input checks, and agreement with the study code.
